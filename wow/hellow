@@ -1,0 +1,20 @@
+#The World!
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+message = input()
+message = message.upper()
+translated = ''
+print("please input key (1~26)")
+key = input()
+if key == '':
+ key = '3'
+for symble in message:
+ if symble in LETTERS:
+  num = LETTERS.find(symble)
+  num = num - int(key)
+  if num >= len(LETTERS):
+   num = num - len(LETTERS)
+  translated = translated + LETTERS[num]
+ else:
+  translated = translated + symble
+translated = translated.lower()
+print(translated.title())
